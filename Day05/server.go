@@ -17,7 +17,7 @@ func (s *StudentProtoService)GetName(ctx context.Context,r *pb.MyRequest)(*pb.My
 }
 
 func main() {
-	// 创建 gRPC Server 对象
+	// 创建  gRPC Server 对象
 	server := grpc.NewServer()
 	// 将方法的rpc server注册到 gRPC Server 的内部注册中心
 	pb.RegisterStudentProtoServiceServer(server, &StudentProtoService{})
