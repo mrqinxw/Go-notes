@@ -2,18 +2,17 @@ package main
 
 import (
 	"context"
-	"log"
-	"net"
 	"google.golang.org/grpc"
 	pb "grpc-demo/proto"
+	"log"
+	"net"
 )
 
-type  StudentProtoService struct {
-	
+type StudentProtoService struct {
 }
 
-func (s *StudentProtoService)GetName(ctx context.Context,r *pb.MyRequest)(*pb.MyResponse,error)  {
-	return &pb.MyResponse{Realname:r.GetName()+ "Server "},nil
+func (s *StudentProtoService) GetName(ctx context.Context, r *pb.MyRequest) (*pb.MyResponse, error) {
+	return &pb.MyResponse{Realname: r.GetName() + "Server "}, nil
 }
 
 func main() {
